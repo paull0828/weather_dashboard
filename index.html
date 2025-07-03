@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <h1>Weather Dashboard</h1>
+        <p>Get real-time weather information for any city</p>
+      </header>
+
+      <main class="content">
+        <section class="search-section" aria-label="City search">
+          <div class="input-group">
+            <label for="cityInput" class="sr-only">Enter city name</label>
+            <input
+              type="text"
+              id="cityInput"
+              class="input-field"
+              placeholder="Enter city name (e.g., London, Paris, Tokyo)"
+              autocomplete="off"
+              aria-describedby="search-help"
+              role="combobox"
+              aria-expanded="false"
+              aria-haspopup="listbox"
+            />
+            <div id="search-help" class="sr-only">
+              Start typing to see city suggestions
+            </div>
+
+            <div
+              id="suggestions"
+              class="suggestions-container"
+              role="listbox"
+              aria-label="City suggestions"
+            ></div>
+          </div>
+
+          <button
+            id="getWeatherBtn"
+            class="btn"
+            type="button"
+            aria-describedby="button-help"
+          >
+            <span class="loading-spinner" id="loadingSpinner"></span>
+            <span id="buttonText">Get Weather</span>
+          </button>
+          <div id="button-help" class="sr-only">
+            Click to fetch weather data for the selected city
+          </div>
+        </section>
+
+        <section
+          id="weatherResult"
+          class="weather-result"
+          aria-live="polite"
+          aria-label="Weather information"
+        ></section>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
